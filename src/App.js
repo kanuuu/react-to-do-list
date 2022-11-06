@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import ListManager from "./components/ListManager";
+import Header from "./components/Header";
+import { useState } from "react";
 
-function App() {
+import { library } from "@fortawesome/fontawesome-svg-core";
+import {
+  faTrash,
+  faMoon,
+  faPenToSquare,
+  faMagnifyingGlass,
+  faSquareMinus,
+} from "@fortawesome/free-solid-svg-icons";
+library.add(faTrash, faMoon, faPenToSquare, faMagnifyingGlass, faSquareMinus);
+
+const App = () => {
+  const [darkMode, setDarkMode] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={darkMode ? "App" : "App app-dm"}>
+      <Header darkMode={darkMode} setDarkMode={setDarkMode} />
+      <ListManager darkMode={darkMode} />
     </div>
   );
-}
+};
 
 export default App;
