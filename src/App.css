@@ -187,6 +187,16 @@ body {
   border-bottom: 2px solid #272343;
 }
 
+.footer-bar {
+  display: flex;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+}
+.footer-title {
+  color: #272343;
+}
+
 /* DARK MODE */
 
 .app-dm {
